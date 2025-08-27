@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: ROS 2 Jazzy CI
 
 on:
@@ -9,6 +10,19 @@ on:
     branches: [ jazzy, jazzy-dev ]
     paths-ignore:
       - 'README.md'
+=======
+name: ROS 2 CI
+
+on:
+  push:
+    branches: [jazzy, jazzy-dev]
+    paths-ignore:
+      - "README.md"
+  pull_request:
+    branches: [jazzy, jazzy-dev]
+    paths-ignore:
+      - "README.md"
+>>>>>>> b97353e ([TEST] jazzy build)
 
 jobs:
   build:
@@ -34,5 +48,10 @@ jobs:
 
       - name: Build with colcon
         run: |
+<<<<<<< HEAD
           source /opt/ros/jazzy/setup.bash
           colcon build --event-handlers console_direct+ --packages-skip dg_sdk_ros2_bridge
+=======
+          source /opt/ros/humble/setup.bash
+          colcon build --event-handlers console_direct+
+>>>>>>> b97353e ([TEST] jazzy build)
